@@ -1,0 +1,49 @@
+
+
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>My Profile - MyBank</title>
+    <link rel="stylesheet" href="{% static 'banking/style.css' %}">
+</head>
+
+<body class="auth-page">
+
+    <div class="profile-container">
+
+        <h1>MyBank</h1>
+        <h2>My Profile</h2>
+        <p class="subtitle">Your personal and banking information</p>
+
+        <div class="profile-section">
+            <h3>Personal Details</h3>
+
+            <p><strong>Username:</strong> {{ user.username }}</p>
+            <p><strong>First Name:</strong> {{ user.first_name }}</p>
+            <p><strong>Last Name:</strong> {{ user.last_name }}</p>
+            <p><strong>Email:</strong> {{ user.email }}</p>
+        </div>
+
+        <div class="profile-section">
+            <h3>Bank Account Details</h3>
+
+            {% if account %}
+                <p><strong>Account Number:</strong> {{ account.account_number }}</p>
+                <p><strong>Account Type:</strong> {{ account.get_account_type_display }}</p>
+                <p><strong>Available Balance:</strong> ₹{{ account.balance }}</p>
+                <p><strong>Account Created:</strong> {{ account.created_at|date:"d-m-Y" }}</p>
+            {% else %}
+                <p>No bank account found.</p>
+            {% endif %}
+        </div>
+
+        <a class="profile-back" href="{% url 'dashboard' %}">
+            ← Back to Dashboard
+        </a>
+
+    </div>
+
+</body>
+</html>

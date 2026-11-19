@@ -1,0 +1,67 @@
+
+
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Complaint History - MyBank</title>
+    <link rel="stylesheet" href="{% static 'banking/style.css' %}">
+</head>
+
+<body class="statement-page">
+
+    <div class="statement-container">
+
+        <h1>MyBank</h1>
+        <h2>Complaint History</h2>
+
+        <p style="text-align:center; color:#64748b;">
+            Track the complaints you have submitted
+        </p>
+
+        {% if complaints %}
+        <div class="table-wrapper">
+            <table class="transaction-table">
+                <thead>
+                    <tr>
+                        <th>Complaint ID</th>
+                        <th>Complaint Type</th>
+                        <th>Description</th>
+                        <th>Date</th>
+                        <th>Status</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    {% for complaint in complaints %}
+                    <tr>
+                        <td>{{ complaint.id }}</td>
+                        <td>{{ complaint.get_complaint_type_display }}</td>
+                        <td>{{ complaint.description }}</td>
+                        <td>{{ complaint.created_at|date:"d-m-Y h:i A" }}</td>
+                        <td>
+                            <span class="complaint-status">
+                                {{ complaint.status }}
+                            </span>
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+
+        {% else %}
+            <p class="empty-message">
+                You have not submitted any complaints yet.
+            </p>
+        {% endif %}
+
+        <a class="back-link" href="{% url 'dashboard' %}">
+            ← Back to Dashboard
+        </a>
+
+    </div>
+
+</body>
+</html>

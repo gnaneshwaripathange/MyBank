@@ -1,0 +1,54 @@
+
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Money Transfer - MyBank</title>
+    <link rel="stylesheet" href="{% static 'banking/style.css' %}">
+</head>
+
+<body class="auth-page">
+
+    <div class="transfer-container">
+
+        <h1>MyBank</h1>
+        <h2>Money Transfer</h2>
+        <p class="subtitle">Transfer money securely to another account</p>
+
+        <div class="balance-card">
+            <p>Available Balance</p>
+            <h2>₹{{ sender.balance }}</h2>
+        </div>
+
+        {% if success %}
+            <p class="success-message">{{ success }}</p>
+        {% endif %}
+
+        {% if error %}
+            <p class="error-message">{{ error }}</p>
+        {% endif %}
+
+        <form method="POST">
+            {% csrf_token %}
+
+            <label>Beneficiary Account Number</label>
+            <input type="text" name="receiver_account"
+                   placeholder="Enter beneficiary account number"
+                   required>
+
+            <label>Amount to Transfer (₹)</label>
+            <input type="number" name="amount"
+                   placeholder="Enter amount"
+                   step="0.01" min="0.01" required>
+
+            <button type="submit">Transfer Money</button>
+        </form>
+
+        <a href="{% url 'dashboard' %}">← Back to Dashboard</a>
+
+    </div>
+
+</body>
+</html>
+

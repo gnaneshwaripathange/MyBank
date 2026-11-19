@@ -1,0 +1,53 @@
+
+
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Raise Complaint - MyBank</title>
+    <link rel="stylesheet" href="{% static 'banking/style.css' %}">
+</head>
+
+<body class="auth-page">
+
+    <div class="complaint-container">
+
+        <h1>MyBank</h1>
+        <h2>Raise a Complaint</h2>
+        <p class="subtitle">We are here to help you</p>
+
+        {% if success %}
+            <p class="success-message">{{ success }}</p>
+        {% endif %}
+
+        {% if error %}
+            <p class="error-message">{{ error }}</p>
+        {% endif %}
+
+        <form method="POST">
+            {% csrf_token %}
+
+            <label>Select Complaint Type</label>
+            <select name="complaint_type" required>
+                <option value="">Select Category</option>
+                <option value="TRANSACTION">Transaction Issue</option>
+                <option value="ACCOUNT">Account Issue</option>
+                <option value="PAYMENT">Bill Payment Issue</option>
+                <option value="OTHER">Other</option>
+            </select>
+
+            <label>Describe Your Problem</label>
+            <textarea name="description" rows="6"
+                      placeholder="Explain your problem here..."
+                      required></textarea>
+
+            <button type="submit">Submit Complaint</button>
+        </form>
+
+        <a href="{% url 'dashboard' %}">← Back to Dashboard</a>
+
+    </div>
+
+</body>
+</html>

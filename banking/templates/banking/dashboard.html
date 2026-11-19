@@ -1,0 +1,44 @@
+
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>MyBank Dashboard</title>
+    <link rel="stylesheet" href="{% static 'banking/style.css' %}">
+</head>
+
+<body>
+
+    <h1>Welcome to MyBank</h1>
+
+    <h2>Welcome, {{ request.user.username }}!</h2>
+
+    <div class="account-details">
+        <h3>My Account Details</h3>
+
+        {% if account %}
+            <p>Account Number: {{ account.account_number }}</p>
+            <p>Account Type: {{ account.get_account_type_display }}</p>
+            <p>Available Balance: ₹{{ account.balance }}</p>
+        {% else %}
+            <p>No bank account is assigned to your profile yet.</p>
+        {% endif %}
+    </div>
+
+    <h3 style="text-align:center;">Banking Services</h3>
+
+    <div class="services">
+        <a href="{% url 'transfer' %}">Money Transfer</a>
+        <a href="{% url 'statement' %}">Account Statement</a>
+        <a href="{% url 'pay_bills' %}">Pay Bills</a>
+        <a href="{% url 'bill_history' %}">Bill Payment History</a>
+        <a href="{% url 'complaint' %}">Raise a Complaint</a>
+        <a href="{% url 'complaint_history' %}">Complaint History</a>
+        <a href="{% url 'profile' %}">View Profile Details</a>
+    </div>
+
+    <a class="logout" href="{% url 'logout' %}">Logout</a>
+
+</body>
+</html>

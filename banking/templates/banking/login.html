@@ -1,0 +1,47 @@
+
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>MyBank Login</title>
+    <link rel="stylesheet" href="{% static 'banking/style.css' %}">
+</head>
+
+<body class="auth-page">
+
+    <div class="login-container">
+
+        <h1>MyBank</h1>
+        <h2>Welcome Back!</h2>
+        <p class="subtitle">Login to access your banking account</p>
+
+        {% if error %}
+            <p class="error-message">{{ error }}</p>
+        {% endif %}
+
+        <form method="POST">
+            {% csrf_token %}
+
+            <label>Username</label>
+            <input type="text" name="username"
+                   placeholder="Enter your username" required>
+
+            <label>Password</label>
+            <input type="password" name="password"
+                   placeholder="Enter your password" required>
+
+            <button type="submit">Login</button>
+        </form>
+
+        <p class="register-link">
+            Don't have an account?
+            <a href="{% url 'register' %}">Register here</a>
+        </p>
+
+        <a href="{% url 'home' %}">Back to Home</a>
+
+    </div>
+
+</body>
+</html>

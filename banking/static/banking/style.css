@@ -1,0 +1,707 @@
+
+/* General page styling */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f1f5f9;
+    color: #1e293b;
+}
+
+/* Dashboard heading */
+h1 {
+    background-color: #0f2b46;
+    color: white;
+    padding: 25px;
+    text-align: center;
+    margin: 0;
+}
+
+/* Welcome message */
+h2 {
+    color: #0f2b46;
+    text-align: center;
+    margin-top: 30px;
+}
+
+/* Section headings */
+h3 {
+    color: #0f2b46;
+}
+
+/* Account details */
+.account-details {
+    background-color: white;
+    padding: 25px;
+    margin: 25px auto;
+    max-width: 700px;
+    border-radius: 12px;
+    box-shadow: 0 3px 12px rgba(0,0,0,0.08);
+}
+
+/* Banking services */
+.services {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 20px;
+    max-width: 1000px;
+    margin: 25px auto;
+    padding: 20px;
+}
+
+/* Service links */
+.services a {
+    display: block;
+    background-color: white;
+    color: #0f2b46;
+    padding: 25px;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 10px;
+    font-weight: bold;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.08);
+    transition: 0.3s;
+}
+
+.services a:hover {
+    background-color: #0f2b46;
+    color: white;
+    transform: translateY(-4px);
+}
+
+/* Logout link */
+.logout {
+    display: block;
+    width: fit-content;
+    margin: 25px auto;
+    padding: 12px 25px;
+    background-color: #dc2626;
+    color: white;
+    text-decoration: none;
+    border-radius: 6px;
+}
+
+
+/* Login page */
+.auth-page {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #eaf0f6;
+}
+
+.login-container {
+    background: white;
+    width: 350px;
+    padding: 35px;
+    border-radius: 15px;
+    text-align: center;
+    box-shadow: 0 5px 25px rgba(0,0,0,0.1);
+}
+
+.login-container h1 {
+    background: none;
+    color: #0f2b46;
+    padding: 0;
+}
+
+.login-container h2 {
+    margin-bottom: 8px;
+}
+
+.subtitle {
+    color: #64748b;
+    margin-bottom: 25px;
+}
+
+.login-container form {
+    text-align: left;
+}
+
+.login-container label {
+    display: block;
+    margin: 15px 0 7px;
+    font-weight: bold;
+}
+
+.login-container input {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 12px;
+    border: 1px solid #cbd5e1;
+    border-radius: 7px;
+}
+
+.login-container input:focus {
+    outline: 2px solid #2563eb;
+}
+
+.login-container button {
+    width: 100%;
+    padding: 13px;
+    margin-top: 22px;
+    background: #0f2b46;
+    color: white;
+    border: none;
+    border-radius: 7px;
+    cursor: pointer;
+}
+
+.login-container button:hover {
+    background: #2563eb;
+}
+
+.error-message {
+    color: red;
+}
+
+.register-link {
+    margin-top: 20px;
+}
+
+.login-container a {
+    color: #2563eb;
+    text-decoration: none;
+}
+
+
+/* Registration page */
+
+.register-container {
+    background: white;
+    width: 380px;
+    max-width: calc(100% - 70px);
+    padding: 30px;
+    border-radius: 15px;
+    text-align: center;
+    box-shadow: 0 5px 25px rgba(0,0,0,0.1);
+    margin: 30px auto;
+}
+
+.register-container h1 {
+    background: none;
+    color: #0f2b46;
+    padding: 0;
+}
+
+.register-container h2 {
+    margin-bottom: 8px;
+}
+
+.register-container form {
+    text-align: left;
+}
+
+.register-container label {
+    display: block;
+    margin: 12px 0 6px;
+    font-weight: bold;
+}
+
+.register-container input {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 11px;
+    border: 1px solid #cbd5e1;
+    border-radius: 7px;
+}
+
+.register-container button {
+    width: 100%;
+    padding: 13px;
+    margin-top: 20px;
+    background: #0f2b46;
+    color: white;
+    border: none;
+    border-radius: 7px;
+    cursor: pointer;
+}
+
+.register-container button:hover {
+    background: #2563eb;
+}
+
+.register-container a {
+    color: #2563eb;
+    text-decoration: none;
+}
+
+
+/* Money transfer page */
+
+.transfer-container {
+    background: white;
+    width: 420px;
+    max-width: calc(100% - 70px);
+    padding: 30px;
+    border-radius: 15px;
+    text-align: center;
+    box-shadow: 0 5px 25px rgba(0,0,0,0.1);
+    margin: 30px auto;
+}
+
+.transfer-container h1 {
+    background: none;
+    color: #0f2b46;
+    padding: 0;
+}
+
+.transfer-container form {
+    text-align: left;
+}
+
+.transfer-container label {
+    display: block;
+    margin: 15px 0 7px;
+    font-weight: bold;
+}
+
+.transfer-container input {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 12px;
+    border: 1px solid #cbd5e1;
+    border-radius: 7px;
+}
+
+.transfer-container button {
+    width: 100%;
+    padding: 13px;
+    margin: 22px 0;
+    background: #0f2b46;
+    color: white;
+    border: none;
+    border-radius: 7px;
+    cursor: pointer;
+}
+
+.transfer-container button:hover {
+    background: #2563eb;
+}
+
+.balance-card {
+    background: #0f2b46;
+    color: white;
+    padding: 15px;
+    border-radius: 10px;
+    margin: 20px 0;
+}
+
+.balance-card h2 {
+    color: white;
+}
+
+.transfer-container a {
+    color: #2563eb;
+    text-decoration: none;
+}
+
+.success-message {
+    color: green;
+    background: #dcfce7;
+    padding: 10px;
+    border-radius: 6px;
+}
+
+.error-message {
+    color: #dc2626;
+    background: #fee2e2;
+    padding: 10px;
+    border-radius: 6px;
+}
+
+
+/* Account statement page */
+
+.statement-page {
+    background: #f1f5f9;
+    padding: 30px 15px;
+}
+
+.statement-container {
+    max-width: 1100px;
+    margin: auto;
+    background: white;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+}
+
+.statement-container h1 {
+    background: none;
+    color: #0f2b46;
+}
+
+.statement-container h2 {
+    color: #0f2b46;
+    text-align: center;
+}
+
+.statement-balance {
+    background: #0f2b46;
+    color: white;
+    padding: 15px 25px;
+    border-radius: 10px;
+    margin: 20px 0;
+}
+
+.statement-balance h3 {
+    color: white;
+}
+
+.table-wrapper {
+    overflow-x: auto;
+    margin-top: 20px;
+}
+
+.transaction-table {
+    width: 100%;
+    border-collapse: collapse;
+    min-width: 750px;
+}
+
+.transaction-table th {
+    background: #0f2b46;
+    color: white;
+    padding: 14px;
+}
+
+.transaction-table td {
+    padding: 13px;
+    text-align: center;
+    border-bottom: 1px solid #e2e8f0;
+}
+
+.transaction-table tr:hover {
+    background: #f1f5f9;
+}
+
+.transaction-status {
+    color: #15803d;
+    font-weight: bold;
+}
+
+.empty-message {
+    text-align: center;
+    padding: 25px;
+    color: #64748b;
+}
+
+.back-link {
+    display: inline-block;
+    margin-top: 25px;
+    color: #2563eb;
+    text-decoration: none;
+}
+
+
+/* Pay bills page */
+
+.bill-container {
+    background: white;
+    width: 420px;
+    max-width: calc(100% - 70px);
+    padding: 30px;
+    border-radius: 15px;
+    text-align: center;
+    box-shadow: 0 5px 25px rgba(0,0,0,0.1);
+    margin: 30px auto;
+}
+
+.bill-container h1 {
+    background: none;
+    color: #0f2b46;
+    padding: 0;
+}
+
+.bill-container form {
+    text-align: left;
+}
+
+.bill-container label {
+    display: block;
+    margin: 15px 0 7px;
+    font-weight: bold;
+}
+
+.bill-container input,
+.bill-container select {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 12px;
+    border: 1px solid #cbd5e1;
+    border-radius: 7px;
+    background: white;
+}
+
+.bill-container button {
+    width: 100%;
+    padding: 13px;
+    margin: 22px 0;
+    background: #0f2b46;
+    color: white;
+    border: none;
+    border-radius: 7px;
+    cursor: pointer;
+}
+
+.bill-container button:hover {
+    background: #2563eb;
+}
+
+.bill-container a {
+    color: #2563eb;
+    text-decoration: none;
+}
+
+
+/* Complaint page */
+
+.complaint-container {
+    background: white;
+    width: 420px;
+    max-width: calc(100% - 70px);
+    padding: 30px;
+    border-radius: 15px;
+    text-align: center;
+    box-shadow: 0 5px 25px rgba(0,0,0,0.1);
+    margin: 30px auto;
+}
+
+.complaint-container h1 {
+    background: none;
+    color: #0f2b46;
+    padding: 0;
+}
+
+.complaint-container form {
+    text-align: left;
+}
+
+.complaint-container label {
+    display: block;
+    margin: 15px 0 7px;
+    font-weight: bold;
+}
+
+.complaint-container select,
+.complaint-container textarea {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 12px;
+    border: 1px solid #cbd5e1;
+    border-radius: 7px;
+    font-family: Arial, sans-serif;
+}
+
+.complaint-container textarea {
+    resize: vertical;
+}
+
+.complaint-container button {
+    width: 100%;
+    padding: 13px;
+    margin: 20px 0;
+    background: #0f2b46;
+    color: white;
+    border: none;
+    border-radius: 7px;
+    cursor: pointer;
+}
+
+.complaint-container button:hover {
+    background: #2563eb;
+}
+
+.complaint-container a {
+    color: #2563eb;
+    text-decoration: none;
+}
+
+
+/* Complaint history */
+
+.complaint-status {
+    display: inline-block;
+    padding: 6px 12px;
+    background: #fef3c7;
+    color: #92400e;
+    border-radius: 20px;
+    font-weight: bold;
+    font-size: 13px;
+}
+
+.transaction-table td {
+    vertical-align: middle;
+}
+
+
+/* Profile page */
+
+.profile-container {
+    background: white;
+    width: 500px;
+    max-width: calc(100% - 70px);
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 5px 25px rgba(0,0,0,0.1);
+    margin: 30px auto;
+}
+
+.profile-container h1 {
+    background: none;
+    color: #0f2b46;
+    padding: 0;
+    text-align: center;
+}
+
+.profile-container h2 {
+    text-align: center;
+    color: #0f2b46;
+}
+
+.profile-section {
+    background: #f1f5f9;
+    padding: 18px;
+    border-radius: 10px;
+    margin: 20px 0;
+}
+
+.profile-section h3 {
+    color: #0f2b46;
+    border-bottom: 2px solid #cbd5e1;
+    padding-bottom: 10px;
+}
+
+.profile-section p {
+    padding: 5px 0;
+    overflow-wrap: anywhere;
+}
+
+.profile-back {
+    display: block;
+    text-align: center;
+    color: #2563eb;
+    text-decoration: none;
+    margin-top: 20px;
+}
+
+
+/* Home page */
+
+.home-page {
+    margin: 0;
+    padding: 0;
+    background: #f1f5f9;
+}
+
+.navbar {
+    background: #0f2b46;
+    color: white;
+    padding: 15px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navbar h2 {
+    color: white;
+    margin: 0;
+}
+
+.navbar a {
+    color: white;
+    text-decoration: none;
+    margin-left: 20px;
+    font-weight: bold;
+}
+
+.navbar a:hover {
+    color: #93c5fd;
+}
+
+.hero {
+    background: #0f2b46;
+    color: white;
+    text-align: center;
+    padding: 80px 20px;
+}
+
+.hero h1 {
+    background: none;
+    font-size: 40px;
+}
+
+.hero h2 {
+    color: #bfdbfe;
+}
+
+.hero p {
+    max-width: 600px;
+    margin: 20px auto;
+    line-height: 1.7;
+}
+
+.home-buttons {
+    margin-top: 30px;
+}
+
+.home-buttons a {
+    display: inline-block;
+    padding: 13px 28px;
+    margin: 8px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.login-btn {
+    background: white;
+    color: #0f2b46;
+}
+
+.register-btn {
+    background: #2563eb;
+    color: white;
+}
+
+.features {
+    text-align: center;
+    padding: 35px 20px;
+}
+
+.features h2 {
+    color: #0f2b46;
+}
+
+.feature-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 20px;
+    max-width: 1000px;
+    margin: 30px auto;
+}
+
+.feature-card {
+    background: white;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 3px 12px rgba(0,0,0,0.08);
+}
+
+.feature-card h3 {
+    color: #0f2b46;
+}
+
+.feature-card p {
+    color: #64748b;
+    line-height: 1.6;
+}
+
+.home-page footer {
+    background: #0f2b46;
+    color: white;
+    text-align: center;
+    padding: 15px;
+}
